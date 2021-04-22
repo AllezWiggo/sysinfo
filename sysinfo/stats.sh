@@ -1,8 +1,8 @@
 #!/bin/bash
-TEST_NAME=$(cat test.cfg | cut -d'=' -f2)
+TEST_NAME=$(cat test.cfg | grep TEST_NAME | cut -d'=' -f2)
 TS="$(date +%d-%b-%Y-%H:%M:%S)"
-BASE="/home/centos/sysinfo"
-DATA_DIR="$BASE/data/$TEST_NAME"
+DATA_BASE=$(cat test.cfg | grep DATA_DIR | cut -d'=' -f2)
+DATA_DIR="$DATA_BASE/$TEST_NAME"
 
 if [ ! -f $DATA_DIR ]; then
   mkdir -p $DATA_DIR
