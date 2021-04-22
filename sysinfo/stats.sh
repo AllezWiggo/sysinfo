@@ -1,6 +1,6 @@
 #!/bin/bash
 TEST_NAME=$(cat test.cfg | grep TEST_NAME | cut -d'=' -f2)
-TS="$(date +%d-%b-%Y-%H:%M:%S)"
+TS="$(date +'%Y-%m-%d %H:%M:%S')"
 DATA_BASE=$(cat test.cfg | grep DATA_DIR | cut -d'=' -f2)
 DATA_DIR="$DATA_BASE/$TEST_NAME"
 
