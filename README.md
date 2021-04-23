@@ -49,7 +49,12 @@ Local - Will set instance type as n/a.
 
 ## Data Captured
 
+### CPU & Memory Utilization
 ![cpu and memory utilization](img/sysinfo_cpumem.png)
 
+### CPU & Memory by PID
+![cpu and memory by pid](img/sysinfo_pid.png)
+
+### Disk Utilization
 ![disk utilization](img/sysinfo_disk.png)
 
