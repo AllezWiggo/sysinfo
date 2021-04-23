@@ -8,9 +8,9 @@ URL=$(cat as4.cfg | grep AS4_URL | cut -d'=' -f2)
 GRID=$(cat as4.cfg | grep AS4_GRID_NAME | cut -d'=' -f2)
 /opt/tibco/as/4.6/bin/tibdg -r $URL -g $GRID status > $TMP/$FN.log
 
-KEEPER=$(cat grid.cfg | grep keeper | cut -d'=' -f2)
-PROXY=$(cat grid.cfg | grep proxy | cut -d'=' -f2)
-NODE=$(cat grid.cfg | grep node | cut -d'=' -f2)
+KEEPER=$(cat $BASE/grid.cfg | grep keeper | cut -d'=' -f2)
+PROXY=$(cat $BASE/grid.cfg | grep proxy | cut -d'=' -f2)
+NODE=$(cat $BASE/grid.cfg | grep node | cut -d'=' -f2)
 
 if [ ! -f $DATA_DIR/node.csv ]; then
 echo "timestamp,name,host,pid,rev,state,txns,reqs,copyset,role,est_size,fs_used,fs_cap,data_dir,max_write" > $DATA_DIR/node.csv
