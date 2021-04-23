@@ -46,3 +46,10 @@ Local - Will set instance type as n/a.
 
 ## Compatibility
  - [x] Centos 7.9
+
+## Data Captured
+
+![cpu and memory utilization](img/sysinfo_cpumem.png)
+
+![disk utilization](img/sysinfo_disk.png)
+
