@@ -1,16 +1,21 @@
 #!/bin/bash
-TS=$1
+TS="$1"
 FN="$(date +%d-%b-%Y-%H%M%S)"
-BASE=$2
-DATA_DIR=$3
+BASE="$2"
+DATA_DIR="$3"
 TMP="$BASE/data/tmp"
-URL=$(cat as4.cfg | grep AS4_URL | cut -d'=' -f2)
-GRID=$(cat as4.cfg | grep AS4_GRID_NAME | cut -d'=' -f2)
-/opt/tibco/as/4.6/bin/tibdg -r $URL -g $GRID status > $TMP/$FN.log
 
-KEEPER=$(cat $BASE/grid.cfg | grep keeper | cut -d'=' -f2)
-PROXY=$(cat $BASE/grid.cfg | grep proxy | cut -d'=' -f2)
-NODE=$(cat $BASE/grid.cfg | grep node | cut -d'=' -f2)
+if [ ! -f "$TMP" ]; then
+  mkdir -p "$TMP"
+fi
+
+URL=$(cat ~/as4.cfg | grep AS4_URL | cut -d'=' -f2)
+GRID=$(cat ~/as4.cfg | grep AS4_GRID_NAME | cut -d'=' -f2)
+tibdg -r $URL -g $GRID status > $TMP/$FN.log
+
+KEEPER=$(cat ~/grid.cfg | grep keeper | cut -d'=' -f2)
+PROXY=$(cat ~/grid.cfg | grep proxy | cut -d'=' -f2)
+NODE=$(cat ~/grid.cfg | grep node | cut -d'=' -f2)
 
 if [ ! -f $DATA_DIR/node.csv ]; then
 echo "timestamp,name,host,pid,rev,state,txns,reqs,copyset,role,est_size,fs_used,fs_cap,data_dir,max_write" > $DATA_DIR/node.csv
@@ -44,5 +49,4 @@ do
     IFS=', ' read -r -a array <<< "$line"
     echo "$TS,${array[1]},${array[2]},${array[3]},${array[4]},${array[5]},${array[6]},${array[7]}" >> $DATA_DIR/keeper.csv
 done
-
 
