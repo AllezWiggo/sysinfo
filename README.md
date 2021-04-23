@@ -39,7 +39,7 @@ Name of the current test being run.
 ### TEST_ENV
 It can be any of the values below.
 
-AWS - The utility will get instance type using ec3 url.
+AWS - The utility will get instance type using ec2 metadata url.
 
 Local - Will set instance type as n/a.
 
