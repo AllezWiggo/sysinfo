@@ -45,4 +45,4 @@ Local - Will set instance type as n/a.
 
 
 ## Compatibility
- - [x] Centos
+ - [x] Centos 7.9
