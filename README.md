@@ -16,12 +16,15 @@ This will execute the scripts and collect statistics every 1 minute.
 Feel free to change the duration as per your need.
 
 ## Configurations
-The configurations for the tests can be found in test.cfg file.
+Modify the location of home folder in file `stats.sh`.
 
 ### HOME_DIR
 Location of sysinfo folder. 
 
 E.g. `/home/centos/sysinfo`
+
+
+The configurations for the tests can be found in `test.cfg` file.
 
 ### DATA_DIR
 Location where the utility will create a folder with TEST_NAME and store all generated files.
