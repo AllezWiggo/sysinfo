@@ -18,8 +18,15 @@ Feel free to change the duration as per your need.
 ## Configurations
 The configurations for the tests can be found in test.cfg file.
 
+### HOME_DIR
+Location of sysinfo folder. 
+
+E.g. `/home/centos/sysinfo`
+
 ### DATA_DIR
 Location where the utility will create a folder with TEST_NAME and store all generated files.
+
+E.g. `/home/centos/sysinfo/data`
 
 ### TEST_NAME
 Name of the current test being run.
