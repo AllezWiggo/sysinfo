@@ -19,10 +19,12 @@ Feel free to change the duration as per your need.
 Modify the location of home folder in file `stats.sh`.
 
 ### HOME_DIR
-Location of sysinfo folder. 
-
-E.g. `/home/centos/sysinfo`
-
+Location of sysinfo folder. Modify within the code block shown below.
+```
+####### CHANGE THIS ########
+HOME_DIR=/home/centos/sysinfo
+############################
+```
 
 The configurations for the tests can be found in `test.cfg` file.
 
