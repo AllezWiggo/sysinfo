@@ -15,5 +15,5 @@ fi
 
 for fl in addons/*.sh
 do
-  ./$fl "$TS" "$BASE" "$DATA_DIR"
+  ./$fl "$TS" "$DATA_BASE" "$DATA_DIR"
 done
