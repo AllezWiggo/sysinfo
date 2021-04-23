@@ -8,23 +8,23 @@ If you pulled and configured the utility in folder:
 /home/centos/sysinfo
 ```
 Then you can configure the cron job as below.
+
+The script takes one argument:
+ * Location of sysinfo folder
+
 ```
 sudo crontab -e
-*/1 * * * * /home/centos/sysinfo/stats.sh
+*/1 * * * * /home/centos/sysinfo/stats.sh "/home/centos/sysinfo"
 ```
 This will execute the scripts and collect statistics every 1 minute.
 Feel free to change the duration as per your need.
 
-## Configurations
-Modify the location of home folder in file `stats.sh`.
+If you do not pass the mandatory argument, you will see the message below.
+```
+Usage: ./stats.sh <base folder location>
+```
 
-### HOME_DIR
-Location of sysinfo folder. Modify within the code block shown below.
-```
-####### CHANGE THIS ########
-HOME_DIR=/home/centos/sysinfo
-############################
-```
+## Configurations
 
 The configurations for the tests can be found in `test.cfg` file.
 
